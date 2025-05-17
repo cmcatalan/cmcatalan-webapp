@@ -10,6 +10,7 @@ import {addDays, differenceInMinutes, format} from "date-fns";
 import {orderBy} from "lodash";
 import Link from "next/link";
 import {Button} from "@heroui/react";
+import { TZDate } from "@date-fns/tz";
 
 interface AttendancesPageProps {
     searchParams: Promise<{ date?: string }>
@@ -33,7 +34,7 @@ export default async function AttendancesPage({searchParams}: AttendancesPagePro
         const month = parseInt(splits[1]!) - 1;
         const day = parseInt(splits[2]!);
 
-        parsedDate = new Date(year, month, day, 0, 0, 0, 0);
+        parsedDate = new TZDate(year, month, day, defaultTimeZone);
     }
 
     const parsedStart = toZonedTime(parsedDate, defaultTimeZone);
