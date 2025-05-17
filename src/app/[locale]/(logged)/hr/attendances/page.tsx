@@ -1,0 +1,146 @@
+import {auth} from "@/auth";
+import {redirect} from "next/navigation";
+import {getLocale, getTranslations} from "next-intl/server";
+import {getCompanyUsers} from "@/services/usersService";
+import {getAttendances} from "@/services/attendancesService";
+import {formatInTimeZone, toZonedTime} from "date-fns-tz";
+import {defaultHourFormat, defaultTimeZone, getLocaleForDateTime, timeCounter} from "@/utils/datetime";
+import {FaArrowLeft, FaArrowRight, FaClock, FaHourglassEnd, FaRegClock, FaUser} from "react-icons/fa6";
+import {addDays, differenceInMinutes, format} from "date-fns";
+import {orderBy} from "lodash";
+import Link from "next/link";
+import {Button} from "@heroui/react";
+
+interface AttendancesPageProps {
+    searchParams: Promise<{ date?: string }>
+}
+
+export default async function AttendancesPage({searchParams}: AttendancesPageProps) {
+    const session = await auth();
+    if (!session?.user.id) return redirect("/");
+
+    const {date} = await searchParams;
+
+    const t = await getTranslations("Attendances");
+
+    const users = await getCompanyUsers(session?.user.company);
+
+    const today = toZonedTime(new Date(), defaultTimeZone);
+    today.setHours(23, 59, 59, 999);
+
+    const parsedDate = date && !isNaN(new Date(date).getTime()) && new Date(date).getTime() < today.getTime()
+        ? new Date(date)
+        : today;
+
+    const startDateTz = toZonedTime(parsedDate, defaultTimeZone);
+    startDateTz.setHours(0, 0, 0, 0);
+
+    const endDateTz = toZonedTime(parsedDate, defaultTimeZone);
+    endDateTz.setHours(23, 59, 59, 999);
+
+    const attendances = await getAttendances(session?.user.company, startDateTz.toISOString(), endDateTz.toISOString());
+    const localeStr = await getLocale();
+    const locale = getLocaleForDateTime(localeStr);
+
+    const mappedData = attendances?.map((a) => {
+        const user = users.find((user) => user.id === a.userId);
+        let time = "";
+        const start = toZonedTime(a.checkIn!, defaultTimeZone);
+
+        if (a.checkOut) {
+            const end = toZonedTime(a.checkOut, defaultTimeZone);
+            const minDiff = differenceInMinutes(end, start);
+            const sumHours = Math.floor(minDiff / 60);
+            const sumMinutes = minDiff % 60;
+            time = timeCounter(sumHours, sumMinutes);
+        }
+
+        return {
+            id: a.id,
+            firstName: user?.firstName ?? " ",
+            lastName: user?.lastName ?? " ",
+            startDate: start,
+            endDate: a.checkOut
+                ? formatInTimeZone(new Date(a.checkOut!), defaultTimeZone, defaultHourFormat, {locale: locale})
+                : "",
+            elapsedTime: time,
+        };
+    });
+
+    const formattedDate = formatInTimeZone(startDateTz, defaultTimeZone, "PPPP", {locale: locale});
+    const ordered = orderBy(mappedData, ["startDate"], ["desc"]);
+
+    const minusDay = encodeURI(format(addDays(startDateTz, -1), "yyyy-MM-dd"));
+    const plusDay = encodeURI(format(addDays(startDateTz, 1), "yyyy-MM-dd"));
+
+    const isAvailableTomorrow = new Date(parsedDate).getTime() < today.getTime()
+
+    return (
+        <div className="md:max-w-screen-md md:mx-auto space-y-2">
+            <h1 className="font-bold sm:text-2xl mb-2">{t("dayTitle")}</h1>
+            <div className="font-semibold space-x-2 flex flex-row items-center mb-2 w-full justify-center">
+                <Button isIconOnly aria-label={t("ariaPreviousDay")} size="sm" as={Link}
+                        href={`?date=${minusDay}`}>
+                    <FaArrowLeft/>
+                </Button>
+                <span>{formattedDate}</span>
+                {isAvailableTomorrow &&
+                    <Button isIconOnly aria-label={t("ariaNextDay")} size="sm"
+                            href={`?date=${plusDay}`} as={Link}>
+                        <FaArrowRight/>
+                    </Button>
+                }
+            </div>
+            <div className="rounded-lg shadow p-4 border">
+                <ul className="space-y-2">
+                    <li key="first" className="grid grid-cols-4 gap-2 text-center text-sm font-medium">
+                        <div className="flex flex-col items-center space-y-2">
+                            <span className="flex flex-col sm:flex-row items-center">
+                                <FaUser/>
+                                <span className="ml-1">{t("user")}</span>
+                            </span>
+                        </div>
+                        <div className="flex flex-col items-center space-y-2">
+                            <span className="flex flex-col sm:flex-row items-center">
+                                <FaClock/>
+                                <span className="ml-1">{t("startTime")}</span>
+                            </span>
+                        </div>
+                        <div className="flex flex-col items-center space-y-2">
+                            <span className="flex flex-col sm:flex-row items-center">
+                                <FaRegClock/>
+                                <span className="ml-1">{t("endTime")}</span>
+                            </span>
+                        </div>
+                        <div className="flex flex-col items-center space-y-2">
+                            <span className="flex flex-col sm:flex-row items-center">
+                                <FaHourglassEnd/>
+                                <span className="ml-1">{t("time")}</span>
+                            </span>
+                        </div>
+                    </li>
+                    {ordered?.map((a) => {
+                            return (
+                                <li key={a.id}
+                                    className="grid grid-cols-4 gap-2 text-sm w-full p-2 border rounded-md mx-auto shadow-sm">
+                                    <div className="flex flex-col justify-center items-center truncate">
+                                        <p>{a.firstName}</p>
+                                        <p>{a.lastName}</p>
+                                    </div>
+                                    <div
+                                        className="flex items-center justify-center">{formatInTimeZone(a.startDate, defaultTimeZone, defaultHourFormat, {locale: locale})}</div>
+                                    <div className="flex items-center justify-center">{a.endDate ? a.endDate :
+                                        <span className="flex items-center gap-1 text-sm ">
+                                            <span className="h-2 w-2 rounded-full bg-red-600 animate-pulse"/>
+                                            <span className="ml-1">{t("ongoing")}</span>
+                                        </span>}
+                                    </div>
+                                    <div className="flex items-center justify-center">{a.elapsedTime}</div>
+                                </li>)
+                        }
+                    )}
+                </ul>
+            </div>
+        </div>
+    );
+}
