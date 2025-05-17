@@ -10,7 +10,7 @@ import {addDays, differenceInMinutes, format} from "date-fns";
 import {orderBy} from "lodash";
 import Link from "next/link";
 import {Button} from "@heroui/react";
-import { TZDate } from "@date-fns/tz";
+import {TZDate} from "@date-fns/tz";
 
 interface AttendancesPageProps {
     searchParams: Promise<{ date?: string }>
@@ -28,22 +28,26 @@ export default async function AttendancesPage({searchParams}: AttendancesPagePro
 
     let parsedDate = new Date();
 
-    if (date && !isNaN(new Date(date).getTime())) {
+    const haveDate = date && !isNaN(new Date(date).getTime());
+
+    if (haveDate) {
         const splits = date.split("-");
         const year = parseInt(splits[0]!);
         const month = parseInt(splits[1]!) - 1;
         const day = parseInt(splits[2]!);
 
-        parsedDate = new TZDate(year, month, day, defaultTimeZone);
+        parsedDate = new TZDate(year, month, day, 0, 0, 0, 0);
     }
 
-    const parsedStart = toZonedTime(parsedDate, defaultTimeZone);
+    const parsedStart = haveDate ? parsedDate : toZonedTime(parsedDate, defaultTimeZone);
     parsedStart.setHours(0, 0, 0, 0);
+    const start = parsedStart.toISOString();
 
-    const parsedEnd = toZonedTime(parsedDate, defaultTimeZone);
+    const parsedEnd = haveDate ? parsedDate : toZonedTime(parsedDate, defaultTimeZone);
     parsedEnd.setHours(23, 59, 59, 999);
+    const end = parsedStart.toISOString();
 
-    const attendances = await getAttendances(session?.user.company, parsedStart.toISOString(), parsedEnd.toISOString());
+    const attendances = await getAttendances(session?.user.company, start, end);
     const localeStr = await getLocale();
     const locale = getLocaleForDateTime(localeStr);
 
