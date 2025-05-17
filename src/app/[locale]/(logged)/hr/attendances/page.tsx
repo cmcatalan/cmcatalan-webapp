@@ -25,27 +25,21 @@ export default async function AttendancesPage({searchParams}: AttendancesPagePro
 
     const users = await getCompanyUsers(session?.user.company);
 
-    let parsedDate = date && !isNaN(new Date(date).getTime())
-        ? new Date(date)
-        : new Date();
-
-    const parsedStart = toZonedTime(parsedDate, defaultTimeZone);
-    parsedStart.setHours(0, 0, 0, 0);
-
     const todayStart = toZonedTime(new Date(), defaultTimeZone);
     todayStart.setHours(0, 0, 0, 0);
 
-    if (parsedStart > todayStart) {
-        parsedDate = new Date();
-    }
+    const parsedDate = date && !isNaN(new Date(date).getTime())
+        ? new Date(date)
+        : todayStart;
 
-    const startDateTz = toZonedTime(parsedDate, defaultTimeZone);
-    startDateTz.setHours(0, 0, 0, 0);
 
-    const endDateTz = toZonedTime(parsedDate, defaultTimeZone);
-    endDateTz.setHours(23, 59, 59, 999);
+    const parsedStart = toZonedTime(new Date(parsedDate),defaultTimeZone);
+    parsedStart.setHours(0, 0, 0, 0);
 
-    const attendances = await getAttendances(session?.user.company, startDateTz.toISOString(), endDateTz.toISOString());
+    const parsedEnd = toZonedTime(new Date(parsedDate),defaultTimeZone);
+    parsedEnd.setHours(23, 59, 59, 999);
+
+    const attendances = await getAttendances(session?.user.company, parsedStart.toISOString(), parsedEnd.toISOString());
     const localeStr = await getLocale();
     const locale = getLocaleForDateTime(localeStr);
 
@@ -72,11 +66,11 @@ export default async function AttendancesPage({searchParams}: AttendancesPagePro
         };
     });
 
-    const formattedDate = formatInTimeZone(startDateTz, defaultTimeZone, "PPPP", {locale: locale});
+    const formattedDate = formatInTimeZone(parsedStart, defaultTimeZone, "PPPP", {locale: locale});
     const ordered = orderBy(mappedData, ["startDate"], ["desc"]);
 
-    const minusDay = encodeURI(format(addDays(startDateTz, -1), "yyyy-MM-dd"));
-    const plusDay = encodeURI(format(addDays(startDateTz, 1), "yyyy-MM-dd"));
+    const minusDay = encodeURI(format(addDays(parsedStart, -1), "yyyy-MM-dd"));
+    const plusDay = encodeURI(format(addDays(parsedStart, 1), "yyyy-MM-dd"));
 
     const isAvailableTomorrow = parsedStart < todayStart;
 
