@@ -52,11 +52,9 @@ export default async function AttendancesPage({searchParams}: AttendancesPagePro
     const mappedData = attendances?.map((a) => {
         const user = users.find((user) => user.id === a.userId);
         let time = "";
-        const start = toZonedTime(a.checkIn!, defaultTimeZone);
 
         if (a.checkOut) {
-            const end = toZonedTime(a.checkOut, defaultTimeZone);
-            const minDiff = differenceInMinutes(end, start);
+            const minDiff = differenceInMinutes(a.checkOut, a.checkIn!);
             const sumHours = Math.floor(minDiff / 60);
             const sumMinutes = minDiff % 60;
             time = timeCounter(sumHours, sumMinutes);
@@ -66,7 +64,7 @@ export default async function AttendancesPage({searchParams}: AttendancesPagePro
             id: a.id,
             firstName: user?.firstName ?? " ",
             lastName: user?.lastName ?? " ",
-            startDate: start,
+            startDate: formatInTimeZone(new Date(a.checkIn!), defaultTimeZone, defaultHourFormat, {locale: locale}),
             endDate: a.checkOut
                 ? formatInTimeZone(new Date(a.checkOut!), defaultTimeZone, defaultHourFormat, {locale: locale})
                 : "",
@@ -135,7 +133,7 @@ export default async function AttendancesPage({searchParams}: AttendancesPagePro
                                         <p>{a.lastName}</p>
                                     </div>
                                     <div
-                                        className="flex items-center justify-center">{formatInTimeZone(a.startDate, defaultTimeZone, defaultHourFormat, {locale: locale})}</div>
+                                        className="flex items-center justify-center">{a.startDate}</div>
                                     <div className="flex items-center justify-center">{a.endDate ? a.endDate :
                                         <span className="flex items-center gap-1 text-sm ">
                                             <span className="h-2 w-2 rounded-full bg-red-600 animate-pulse"/>
