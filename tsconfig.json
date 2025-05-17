@@ -9,6 +9,7 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
+    "noUncheckedIndexedAccess": true, // enable when generate types from openapi
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
