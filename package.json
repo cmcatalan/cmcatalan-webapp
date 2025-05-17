@@ -12,6 +12,7 @@
     "gen:types:domainservice": "openapi-typescript http://localhost:5115/swagger/v1/swagger.json -o src/types/domain_service/api.d.ts"
   },
   "dependencies": {
+    "@date-fns/tz": "^1.2.0",
     "@heroui/react": "^2.7.8",
     "@hookform/resolvers": "^5.0.1",
     "date-fns": "^4.1.0",
