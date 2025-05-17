@@ -25,12 +25,19 @@ export default async function AttendancesPage({searchParams}: AttendancesPagePro
 
     const users = await getCompanyUsers(session?.user.company);
 
-    const today = toZonedTime(new Date(), defaultTimeZone);
-    today.setHours(23, 59, 59, 999);
-
-    const parsedDate = date && !isNaN(new Date(date).getTime()) && new Date(date).getTime() < today.getTime()
+    let parsedDate = date && !isNaN(new Date(date).getTime())
         ? new Date(date)
-        : today;
+        : new Date();
+
+    const parsedStart = toZonedTime(parsedDate, defaultTimeZone);
+    parsedStart.setHours(0, 0, 0, 0);
+
+    const todayStart = toZonedTime(new Date(), defaultTimeZone);
+    todayStart.setHours(0, 0, 0, 0);
+
+    if (parsedStart > todayStart) {
+        parsedDate = new Date();
+    }
 
     const startDateTz = toZonedTime(parsedDate, defaultTimeZone);
     startDateTz.setHours(0, 0, 0, 0);
@@ -73,7 +80,7 @@ export default async function AttendancesPage({searchParams}: AttendancesPagePro
     const minusDay = encodeURI(format(addDays(startDateTz, -1), "yyyy-MM-dd"));
     const plusDay = encodeURI(format(addDays(startDateTz, 1), "yyyy-MM-dd"));
 
-    const isAvailableTomorrow = new Date(parsedDate).getTime() < today.getTime()
+    const isAvailableTomorrow = parsedStart < todayStart;
 
     return (
         <div className="md:max-w-screen-md md:mx-auto space-y-2">
