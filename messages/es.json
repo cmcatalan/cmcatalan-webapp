@@ -1,0 +1,519 @@
+{
+  "HomePage": {
+    "title": "Hola mundo",
+    "about": "Go to the about page"
+  },
+  "NotFoundPage": {
+    "title": "No se ha encontrado esta página",
+    "button": "Ir al inicio"
+  },
+  "LoginPage": {
+    "signIn": "Acceda a su cuenta",
+    "email": {
+      "label": "Correo electrónico",
+      "placeholder": "test@test.com",
+      "errors": {
+        "invalid": "Format de correu no vàlid",
+        "required": "Este campo es obligatorio"
+      }
+    },
+    "password": {
+      "label": "Contraseña",
+      "placeholder": "",
+      "errors": {
+        "required": "Este campo es obligatorio",
+        "minLength": "Debe tener al menos 8 caracteres",
+        "maxLength": "Debe tener como máximo 32 caracteres"
+      }
+    },
+    "forgotPassword": {
+      "message": "¿Ha olvidado la contraseña?"
+    },
+    "register": {
+      "message": "¿Aún no tiene cuenta?",
+      "link": "Regístrese"
+    },
+    "submit": {
+      "title": "Iniciar sesión"
+    },
+    "errors": {
+      "invalidCredentials": "Correo electrónico o contraseña incorrectos",
+      "default": "Error desconocido. Por favor, inténtelo de nuevo más tarde"
+    },
+    "resetPassword": "Su contraseña ha sido restablecida con éxito. Ahora puede iniciar sesión"
+  },
+  "ForgotPasswordPage": {
+    "title": "¿Has olvidado tu contraseña?",
+    "message": "Introduzca su correo electrónico y le enviaremos un enlace para restablecer su contraseña",
+    "submit": {
+      "title": "Enviar correo electrónico"
+    },
+    "errors": {
+      "required": "Este campo es obligatorio",
+      "invalid": "Formato de correo no válido",
+      "default": "Error desconocido. Por favor, inténtelo de nuevo más tarde"
+    },
+    "success": {
+      "message": "Se ha enviado un correo electrónico para restablecer la contraseña"
+    },
+    "email": {
+      "label": "Correo electrónico",
+      "placeholder": "test@test.es"
+    }
+  },
+  "ResetPasswordPage": {
+    "title": "Restablecer contraseña",
+    "message": "Introduzca su nueva contraseña",
+    "submit": {
+      "title": "Restablecer contraseña"
+    },
+    "errors": {
+      "required": "Este campo es obligatorio",
+      "minLength": "Debe tener al menos 8 caracteres",
+      "maxLength": "Debe tener como máximo 32 caracteres",
+      "invalid": "Token inválido",
+      "consumed": "Este token ya ha sido utilizado",
+      "expired": "Este token ha caducado",
+      "passwordsDoNotMatch": "Las contraseñas no coinciden",
+      "default": "Error desconocido. Por favor, inténtelo de nuevo más tarde"
+    },
+    "success": {
+      "message": "Su contraseña ha sido restablecida con éxito"
+    },
+    "password": {
+      "label": "Nueva contraseña",
+      "placeholder": ""
+    },
+    "confirmPassword": {
+      "label": "Confirmar contraseña",
+      "placeholder": ""
+    }
+  },
+  "ChangePasswordPage": {
+    "title": "Cambiar contraseña",
+    "message": "Introduzca su nueva contraseña",
+    "submit": {
+      "title": "Cambiar contraseña"
+    },
+    "errors": {
+      "required": "Este campo es obligatorio",
+      "minLength": "Debe tener al menos 8 caracteres",
+      "maxLength": "Debe tener como máximo 32 caracteres",
+      "passwordsDoNotMatch": "Las contraseñas no coinciden",
+      "currentPasswordMatch": "La nueva contraseña no puede coincidir con la contraseña actual",
+      "invalidCurrentPassword": "La contraseña actual no es correcta",
+      "default": "Error desconocido. Por favor, inténtelo de nuevo más tarde"
+    },
+    "currentPassword": {
+      "label": "Contraseña actual",
+      "placeholder": ""
+    },
+    "success": {
+      "message": "Su contraseña ha sido cambiada con éxito"
+    },
+    "password": {
+      "label": "Nueva contraseña",
+      "placeholder": ""
+    },
+    "confirmPassword": {
+      "label": "Confirmar contraseña",
+      "placeholder": ""
+    }
+  },
+  "RegisterPage": {
+    "title": "Crear cuenta",
+    "message": "Crea tu cuenta",
+    "submit": {
+      "title": "Crear cuenta"
+    },
+    "errors": {
+      "required": "Este campo es obligatorio",
+      "minLength": "Debe tener al menos 8 caracteres",
+      "maxLength": "Debe tener como máximo 32 caracteres",
+      "emailAlreadyExists": "El correo electrónico ya está en uso",
+      "invalidEmail": "Formato de correo no válido",
+      "uuid": "Formato UUID no válido",
+      "default": "Error desconocido. Por favor, inténtelo de nuevo más tarde"
+    },
+    "success": {
+      "message": "Su cuenta ha sido creada con éxito"
+    },
+    "companyName": {
+      "label": "Nombre de la empresa",
+      "placeholder": ""
+    },
+    "firstName": {
+      "label": "Nombre",
+      "placeholder": ""
+    },
+    "lastName": {
+      "label": "Apellido",
+      "placeholder": ""
+    },
+    "email": {
+      "label": "Correo electrónico",
+      "placeholder": ""
+    },
+    "password": {
+      "label": "Contraseña",
+      "placeholder": ""
+    },
+    "languageId": {
+      "label": "Idioma",
+      "placeholder": ""
+    },
+    "login": {
+      "message": "¿Ya tienes cuenta?",
+      "link": "Iniciar sesión"
+    }
+  },
+  "Layout": {
+    "title": "Panel de control",
+    "signedInAs": "Conectado como",
+    "changePassword": "Cambiar contraseña",
+    "logout": "Cerrar sesión",
+    "employee": {
+      "title": "Empleado",
+      "attendances": "Fichajes",
+      "leaves": "Ausencias",
+      "profile": "Perfil",
+      "salaries": "Nóminas"
+    },
+    "admin": {
+      "title": "Administrador",
+      "calendars": "Calendarios",
+      "companies": "Empresas",
+      "departments": "Departamentos",
+      "holidays": "Festivos",
+      "teams": "Equipos",
+      "timeoffPolicies": "Políticas de vacaciones",
+      "users": "Usuarios",
+      "workCenters": "Centros de trabajo"
+    },
+    "manager": {
+      "title": "Responsable",
+      "attendanceRequests": "Solicitudes de fichaje",
+      "leaveRequests": "Solicitudes de ausencia"
+    },
+    "hr": {
+      "title": "Gestión del talento",
+      "calendars": "Calendarios",
+      "departments": "Departamentos",
+      "holidays": "Festivos",
+      "teams": "Equipos",
+      "attendanceRequests": "Solicitudes de fichaje",
+      "attendances": "Fichajes"
+    }
+  },
+  "Profile": {
+    "title": "Perfil",
+    "firstName": {
+      "label": "Nombre",
+      "placeholder": ""
+    },
+    "lastName": {
+      "label": "Apellido",
+      "placeholder": ""
+    },
+    "email": {
+      "label": "Correo electrónico",
+      "placeholder": ""
+    },
+    "phone": {
+      "label": "Teléfono",
+      "placeholder": ""
+    },
+    "birthDate": {
+      "label": "Fecha de nacimiento",
+      "placeholder": ""
+    },
+    "languageId": {
+      "label": "Idioma",
+      "placeholder": ""
+    },
+    "genderId": {
+      "label": "Género",
+      "placeholder": ""
+    },
+    "submit": "Actualizar",
+    "errors": {
+      "required": "Este campo es obligatorio",
+      "minLength": "Debe tener al menos 8 caracteres",
+      "maxLength": "Debe tener como máximo 32 caracteres",
+      "age": "Debe tener al menos 16 años",
+      "default": "Error desconocido. Por favor, inténtelo de nuevo más tarde"
+    },
+    "success": "Su perfil ha sido actualizado con éxito"
+  },
+  "Table": {
+    "noData": "No hay datos disponibles"
+  },
+  "Tables": {
+    "users": {
+      "title": "Usuarios",
+      "add": "Añadir",
+      "id": "Id",
+      "firstName": "Nombre",
+      "lastName": "Apellidos",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "birthDate": "Fecha de nacimiento",
+      "actions": "Acciones"
+    },
+    "workCenters": {
+      "title": "Centros de trabajo",
+      "add": "Añadir",
+      "id": "Id",
+      "name": "Nombre",
+      "actions": "Acciones"
+    },
+    "departments": {
+      "title": "Departamentos",
+      "add": "Añadir",
+      "id": "Id",
+      "name": "Nombre",
+      "workCenter": "Centro de trabajo",
+      "actions": "Acciones"
+    }
+  },
+  "Crud": {
+    "AddWorkCenter": {
+      "title": "Añadir centro de trabajo",
+      "name": {
+        "label": "Nombre",
+        "placeholder": ""
+      },
+      "submit": "Añadir",
+      "errors": {
+        "required": "Este campo es obligatorio",
+        "default": "Error desconocido. Por favor, inténtelo de nuevo más tarde"
+      }
+    },
+    "EditWorkCenter": {
+      "title": "Editar centro de trabajo",
+      "name": {
+        "label": "Nombre",
+        "placeholder": ""
+      },
+      "submit": "Editar",
+      "errors": {
+        "required": "Este campo es obligatorio",
+        "default": "Error desconocido. Por favor, inténtelo de nuevo más tarde"
+      }
+    },
+    "ViewWorkCenter": {
+      "title": "Centro de trabajo",
+      "id": "Id",
+      "name": "Nombre"
+    },
+    "AddDepartment": {
+      "title": "Añadir departamento",
+      "name": {
+        "label": "Nombre",
+        "placeholder": ""
+      },
+      "workCenterId": {
+        "label": "Centre de trabajo",
+        "placeholder": ""
+      },
+      "submit": "Añadir",
+      "errors": {
+        "required": "Este campo es obligatorio",
+        "uuid": "Formato UUID no válido",
+        "default": "Error desconocido. Por favor, inténtelo de nuevo más tarde"
+      }
+    },
+    "ViewDepartment": {
+      "title": "Departmento",
+      "id": "ID",
+      "name": "Nombre",
+      "workCenter": "Centro de trabajo"
+    },
+    "EditDepartment": {
+      "title": "Editar departamento",
+      "name": {
+        "label": "Nombre",
+        "placeholder": ""
+      },
+      "workCenterId": {
+        "label": "Centre de trabajo",
+        "placeholder": ""
+      },
+      "submit": "Editar",
+      "errors": {
+        "required": "Este campo es obligatorio",
+        "default": "Error desconocido. Por favor, inténtelo de nuevo más tarde"
+      }
+    }
+  },
+  "EditUser": {
+    "title": "Editar usuario",
+    "firstName": {
+      "label": "Nombre",
+      "placeholder": ""
+    },
+    "lastName": {
+      "label": "Apellido",
+      "placeholder": ""
+    },
+    "email": {
+      "label": "Correo electrónico",
+      "placeholder": ""
+    },
+    "phone": {
+      "label": "Teléfono",
+      "placeholder": ""
+    },
+    "birthDate": {
+      "label": "Fecha de nacimiento",
+      "placeholder": ""
+    },
+    "languageId": {
+      "label": "Idioma",
+      "placeholder": ""
+    },
+    "genderId": {
+      "label": "Género",
+      "placeholder": ""
+    },
+    "roleIds": {
+      "label": "Roles",
+      "placeholder": ""
+    },
+    "submit": "Actualizar",
+    "errors": {
+      "required": "Este campo es obligatorio",
+      "minLength": "Debe tener al menos 8 caracteres",
+      "maxLength": "Debe tener como máximo 32 caracteres",
+      "age": "Debe tener al menos 16 años",
+      "default": "Error desconocido. Por favor, inténtelo de nuevo más tarde"
+    },
+    "success": "Su perfil ha sido actualizado con éxito"
+  },
+  "AddUser": {
+    "title": "Añadir usuario",
+    "firstName": {
+      "label": "Nombre",
+      "placeholder": ""
+    },
+    "lastName": {
+      "label": "Apellidos",
+      "placeholder": ""
+    },
+    "email": {
+      "label": "Correo electrónico",
+      "placeholder": ""
+    },
+    "phone": {
+      "label": "Teléfono",
+      "placeholder": ""
+    },
+    "birthDate": {
+      "label": "Fecha de nacimiento",
+      "placeholder": ""
+    },
+    "languageId": {
+      "label": "Idioma",
+      "placeholder": ""
+    },
+    "password": {
+      "label": "Contraseña",
+      "placeholder": ""
+    },
+    "genderId": {
+      "label": "Género",
+      "placeholder": ""
+    },
+    "roleIds": {
+      "label": "Roles",
+      "placeholder": ""
+    },
+    "submit": "Añadir",
+    "errors": {
+      "required": "Este campo es obligatorio",
+      "minLength": "Debe tener al menos 8 caracteres",
+      "maxLength": "Debe tener como máximo 32 caracteres",
+      "age": "Debe tener al menos 16 años",
+      "default": "Error desconocido. Por favor, inténtelo de nuevo más tarde"
+    }
+  },
+  "ViewUser": {
+    "title": "Ver usuario",
+    "firstName": {
+      "label": "Nombre",
+      "placeholder": ""
+    },
+    "lastName": {
+      "label": "Apellido",
+      "placeholder": ""
+    },
+    "email": {
+      "label": "Correo electrónico",
+      "placeholder": ""
+    },
+    "phone": {
+      "label": "Teléfono",
+      "placeholder": ""
+    },
+    "birthDate": {
+      "label": "Fecha de nacimiento",
+      "placeholder": ""
+    },
+    "language": {
+      "label": "Idioma",
+      "placeholder": ""
+    },
+    "gender": {
+      "label": "Género",
+      "placeholder": ""
+    },
+    "roles": {
+      "label": "Roles",
+      "placeholder": ""
+    }
+  },
+  "Attendances": {
+    "weekTitle": "Fichajes semana {week}",
+    "dayTitle": "Fichajes",
+    "ariaTotalWorkedTime": "Tiempo total trabajado",
+    "ariaPreviousWeek": "Ir a la semana anterior",
+    "ariaNextWeek": "Ir a la semana siguiente",
+    "noAttendances": "No hay fichajes para esta semana",
+    "startTime": "Hora de inicio",
+    "endTime": "Hora de fin",
+    "time": "Tiempo",
+    "add": "Solicitar fichaje",
+    "user": "Usuario",
+    "ongoing": "En curso",
+    "ariaPreviousDay": "Ir al día anterior",
+    "ariaNextDay": "Ir al día siguiente"
+  },
+  "AddManualAttendanceRequest": {
+    "title": "Solicitar fichaje manual",
+    "checkIn": {
+      "label": "Hora de entrada"
+    },
+    "checkOut": {
+      "label": "Hora de salida"
+    },
+    "errors": {
+      "default": "Ha ocurrido un error al enviar la solicitud.",
+      "required": "Este campo es obligatorio.",
+      "invalidDates": "La hora de salida debe ser posterior a la de entrada."
+    },
+    "submit": "Enviar",
+    "success": "Se ha enviado la solicitud"
+  },
+  "ManualAttendanceRequests": {
+    "title": "Solicitudes de fichaje",
+    "user": "Usuario",
+    "startDate": "Fecha de inicio",
+    "endDate": "Fecha de fin",
+    "actions": "Opciones",
+    "accept": "Aceptar",
+    "reject": "Rechazar",
+    "success": "La solicitud ha sido procesada correctamente",
+    "error": "Ha ocurrido un error al procesar la solicitud",
+    "empty": "No hay solicitudes pendientes"
+  }
+}

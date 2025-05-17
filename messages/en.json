@@ -1,0 +1,519 @@
+{
+  "HomePage": {
+    "title": "Hello world!",
+    "about": "Go to the about page"
+  },
+  "NotFoundPage": {
+    "title": "This page was not found",
+    "button": "Go to homepage"
+  },
+  "LoginPage": {
+    "signIn": "Sign in to your account",
+    "email": {
+      "label": "Email",
+      "placeholder": "test@test.com",
+      "errors": {
+        "invalid": "Invalid email format",
+        "required": "This field is required"
+      }
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "",
+      "errors": {
+        "required": "This field is required",
+        "minLength": "Must be at least 8 characters",
+        "maxLength": "Must be at most 32 characters"
+      }
+    },
+    "forgotPassword": {
+      "message": "Forgot password?"
+    },
+    "register": {
+      "message": "Don't have an account yet? ",
+      "link": "Sign up"
+    },
+    "submit": {
+      "title": "Sign in"
+    },
+    "errors": {
+      "invalidCredentials": "Invalid email or password",
+      "default": "Unknown error. Please try again later"
+    },
+    "resetPassword": "Your password has been reset successfully. You can now sign in"
+  },
+  "ForgotPasswordPage": {
+    "title": "Forgot password?",
+    "message": "Enter your email and we will send you a link to reset your password",
+    "submit": {
+      "title": "Send email"
+    },
+    "errors": {
+      "required": "This field is required",
+      "invalid": "Invalid email format",
+      "default": "Unknown error. Please try again later"
+    },
+    "success": {
+      "message": "An email has been sent to reset your password"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "test@test.com"
+    }
+  },
+  "ResetPasswordPage": {
+    "title": "Reset password",
+    "message": "Enter your new password",
+    "submit": {
+      "title": "Reset password"
+    },
+    "errors": {
+      "required": "This field is required",
+      "minLength": "Must be at least 8 characters",
+      "maxLength": "Must be at most 32 characters",
+      "invalid": "Invalid token",
+      "consumed": "This token has already been used",
+      "expired": "This token has expired",
+      "passwordsDoNotMatch": "Passwords do not match",
+      "default": "Unknown error. Please try again later"
+    },
+    "success": {
+      "message": "Your password has been reset successfully"
+    },
+    "password": {
+      "label": "New password",
+      "placeholder": ""
+    },
+    "confirmPassword": {
+      "label": "Confirm password",
+      "placeholder": ""
+    }
+  },
+  "ChangePasswordPage": {
+    "title": "Change password",
+    "message": "Enter your new password",
+    "submit": {
+      "title": "Change password"
+    },
+    "errors": {
+      "required": "This field is required",
+      "minLength": "Must be at least 8 characters",
+      "maxLength": "Must be at most 32 characters",
+      "passwordsDoNotMatch": "Passwords do not match",
+      "currentPasswordMatch": "The new password cannot match the current password",
+      "invalidCurrentPassword": "The current password is incorrect",
+      "default": "Unknown error. Please try again later"
+    },
+    "success": {
+      "message": "Your password has been changed successfully"
+    },
+    "currentPassword": {
+      "label": "Current password",
+      "placeholder": ""
+    },
+    "password": {
+      "label": "New password",
+      "placeholder": ""
+    },
+    "confirmPassword": {
+      "label": "Confirm password",
+      "placeholder": ""
+    }
+  },
+  "RegisterPage": {
+    "title": "Create an account",
+    "message": "Create your account",
+    "submit": {
+      "title": "Sign up"
+    },
+    "errors": {
+      "required": "This field is required",
+      "minLength": "Must be at least 8 characters",
+      "maxLength": "Must be at most 32 characters",
+      "emailAlreadyExists": "Email already exists",
+      "invalidEmail": "Invalid email format",
+      "uuid": "Invalid UUID format",
+      "default": "Unknown error. Please try again later"
+    },
+    "success": {
+      "message": "Your account has been created successfully"
+    },
+    "companyName": {
+      "label": "Company name",
+      "placeholder": ""
+    },
+    "firstName": {
+      "label": "First name",
+      "placeholder": ""
+    },
+    "lastName": {
+      "label": "Last name",
+      "placeholder": ""
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": ""
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": ""
+    },
+    "languageId": {
+      "label": "Language",
+      "placeholder": ""
+    },
+    "login": {
+      "message": "Already have an account? ",
+      "link": "Sign in"
+    }
+  },
+  "Layout": {
+    "title": "Dashboard",
+    "signedInAs": "Signed in as",
+    "changePassword": "Change password",
+    "logout": "Logout",
+    "employee": {
+      "title": "Employee",
+      "attendances": "Attendances",
+      "leaves": "Leaves",
+      "profile": "Profile",
+      "salaries": "Salaries"
+    },
+    "admin": {
+      "title": "Admin",
+      "calendars": "Calendars",
+      "companies": "Companies",
+      "departments": "Departments",
+      "holidays": "Holidays",
+      "teams": "Teams",
+      "timeoffPolicies": "Time-off Policies",
+      "users": "Users",
+      "workCenters": "Work Centers"
+    },
+    "manager": {
+      "title": "Manager",
+      "attendanceRequests": "Attendance Requests",
+      "leaveRequests": "Leave Requests"
+    },
+    "hr": {
+      "title": "Talent management",
+      "calendars": "Calendars",
+      "departments": "Departments",
+      "holidays": "Holidays",
+      "teams": "Teams",
+      "attendanceRequests": "Attendance Requests",
+      "attendances": "Attendances"
+    }
+  },
+  "Profile": {
+    "title": "Profile",
+    "firstName": {
+      "label": "First name",
+      "placeholder": ""
+    },
+    "lastName": {
+      "label": "Last name",
+      "placeholder": ""
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": ""
+    },
+    "phone": {
+      "label": "Phone",
+      "placeholder": ""
+    },
+    "birthDate": {
+      "label": "Birth date",
+      "placeholder": ""
+    },
+    "languageId": {
+      "label": "Language",
+      "placeholder": ""
+    },
+    "genderId": {
+      "label": "Gender",
+      "placeholder": ""
+    },
+    "submit": "Update",
+    "errors": {
+      "required": "This field is required",
+      "minLength": "Must be at least 8 characters",
+      "maxLength": "Must be at most 32 characters",
+      "age": "Must be at least 16 years old",
+      "default": "Unknown error. Please try again later"
+    },
+    "success": "Your profile has been updated successfully"
+  },
+  "Table": {
+    "noData": "No data available"
+  },
+  "Tables": {
+    "users": {
+      "title": "Users",
+      "add": "Add",
+      "id": "ID",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "birthDate": "Date of Birth",
+      "actions": "Actions"
+    },
+    "workCenters": {
+      "title": "Work centers",
+      "add": "Add",
+      "id": "ID",
+      "name": "Name",
+      "actions": "Actions"
+    },
+    "departments": {
+      "title": "Departments",
+      "add": "Add",
+      "id": "ID",
+      "name": "Name",
+      "workCenter": "Work center",
+      "actions": "Actions"
+    }
+  },
+  "Crud": {
+    "AddWorkCenter": {
+      "title": "Add Work Center",
+      "name": {
+        "label": "Name",
+        "placeholder": ""
+      },
+      "submit": "Add",
+      "errors": {
+        "required": "This field is required",
+        "default": "Unknown error. Please try again later"
+      }
+    },
+    "EditWorkCenter": {
+      "title": "Edit Work Center",
+      "name": {
+        "label": "Name",
+        "placeholder": ""
+      },
+      "submit": "Edit",
+      "errors": {
+        "required": "This field is required",
+        "default": "Unknown error. Please try again later"
+      }
+    },
+    "ViewWorkCenter": {
+      "title": "Work center",
+      "id": "ID",
+      "name": "Name"
+    },
+    "AddDepartment": {
+      "title": "Add departament",
+      "name": {
+        "label": "Name",
+        "placeholder": ""
+      },
+      "workCenterId": {
+        "label": "Work center",
+        "placeholder": ""
+      },
+      "submit": "Add",
+      "errors": {
+        "required": "This field is required",
+        "uuid": "Invalid UUID format",
+        "default": "Unknown error. Please try again later"
+      }
+    },
+    "ViewDepartment": {
+      "title": "Department",
+      "id": "ID",
+      "name": "Name",
+      "workCenter": "Work center"
+    },
+    "EditDepartment": {
+      "title": "Edit department",
+      "name": {
+        "label": "Name",
+        "placeholder": ""
+      },
+      "workCenterId": {
+        "label": "Work center",
+        "placeholder": ""
+      },
+      "submit": "Edit",
+      "errors": {
+        "required": "This field is required",
+        "default": "Unknown error. Please try again later"
+      }
+    }
+  },
+  "EditUser": {
+    "title": "Edit user",
+    "firstName": {
+      "label": "First name",
+      "placeholder": ""
+    },
+    "lastName": {
+      "label": "Last name",
+      "placeholder": ""
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": ""
+    },
+    "phone": {
+      "label": "Phone",
+      "placeholder": ""
+    },
+    "birthDate": {
+      "label": "Birth date",
+      "placeholder": ""
+    },
+    "languageId": {
+      "label": "Language",
+      "placeholder": ""
+    },
+    "genderId": {
+      "label": "Gender",
+      "placeholder": ""
+    },
+    "roleIds": {
+      "label": "Roles",
+      "placeholder": ""
+    },
+    "submit": "Update",
+    "errors": {
+      "required": "This field is required",
+      "minLength": "Must be at least 8 characters",
+      "maxLength": "Must be at most 32 characters",
+      "age": "Must be at least 16 years old",
+      "default": "Unknown error. Please try again later"
+    },
+    "success": "Your profile has been updated successfully"
+  },
+  "AddUser": {
+    "title": "Add user",
+    "firstName": {
+      "label": "First name",
+      "placeholder": ""
+    },
+    "lastName": {
+      "label": "Last name",
+      "placeholder": ""
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": ""
+    },
+    "phone": {
+      "label": "Phone",
+      "placeholder": ""
+    },
+    "birthDate": {
+      "label": "Date of birth",
+      "placeholder": ""
+    },
+    "languageId": {
+      "label": "Language",
+      "placeholder": ""
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": ""
+    },
+    "genderId": {
+      "label": "Gender",
+      "placeholder": ""
+    },
+    "roleIds": {
+      "label": "Roles",
+      "placeholder": ""
+    },
+    "submit": "Add",
+    "errors": {
+      "required": "This field is required",
+      "minLength": "Must be at least 8 characters",
+      "maxLength": "Must be at most 32 characters",
+      "age": "Must be at least 16 years old",
+      "default": "Unknown error. Please try again later"
+    }
+  },
+  "ViewUser": {
+    "title": "View user",
+    "firstName": {
+      "label": "First name",
+      "placeholder": ""
+    },
+    "lastName": {
+      "label": "Last name",
+      "placeholder": ""
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": ""
+    },
+    "phone": {
+      "label": "Phone",
+      "placeholder": ""
+    },
+    "birthDate": {
+      "label": "Birth date",
+      "placeholder": ""
+    },
+    "language": {
+      "label": "Language",
+      "placeholder": ""
+    },
+    "gender": {
+      "label": "Gender",
+      "placeholder": ""
+    },
+    "roles": {
+      "label": "Roles",
+      "placeholder": ""
+    }
+  },
+  "Attendances": {
+    "weekTitle": "Week {week} attendances",
+    "dayTitle": "Attendances",
+    "ariaTotalWorkedTime": "Total worked time",
+    "ariaPreviousWeek": "Go to the previous week",
+    "ariaNextWeek": "Go to the next week",
+    "noAttendances": "No attendances for this week",
+    "startTime": "Start time",
+    "endTime": "End time",
+    "time": "Elapsed time",
+    "add": "Request attendance",
+    "user": "User",
+    "ongoing": "In process",
+    "ariaPreviousDay": "Go to the previous day",
+    "ariaNextDay": "Go to the next day"
+  },
+  "AddManualAttendanceRequest": {
+    "title": "Request manual attendance",
+    "checkIn": {
+      "label": "Check-in time"
+    },
+    "checkOut": {
+      "label": "Check-out time"
+    },
+    "errors": {
+      "default": "An error occurred while submitting the request.",
+      "required": "This field is required.",
+      "invalidDates": "Check-out time must be later than check-in time."
+    },
+    "submit": "Submit",
+    "success": "Request sent"
+  },
+  "ManualAttendanceRequests": {
+    "title": "Attendance requests",
+    "user": "User",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "actions": "Actions",
+    "accept": "Accept",
+    "reject": "Reject",
+    "success": "The request has been processed successfully",
+    "error": "An error occurred while processing the request",
+    "empty": "No pending requests"
+  }
+}

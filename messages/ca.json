@@ -1,0 +1,520 @@
+{
+  "HomePage": {
+    "title": "Hola mon!",
+    "about": "Anar"
+  },
+  "NotFoundPage": {
+    "title": "No s'ha trobat aquesta pagina",
+    "button": "Anar al inici"
+  },
+  "LoginPage": {
+    "signIn": "Inicieu la sessió al vostre compte",
+    "email": {
+      "label": "Correu electrònic",
+      "placeholder": "test@test.com",
+      "errors": {
+        "invalid": "Format de correu no vàlid",
+        "required": "Aquest camp és obligatori"
+      }
+    },
+    "password": {
+      "label": "Contrasenya",
+      "placeholder": "",
+      "errors": {
+        "required": "Aquest camp és obligatori",
+        "minLength": "Ha de tenir com a mínim 8 caràcters",
+        "maxLength": "Ha de tenir com a màxim 32 caràcters"
+      }
+    },
+    "forgotPassword": {
+      "message": "Heu oblidat la contrasenya?"
+    },
+    "register": {
+      "message": "Encara no tens un compte?",
+      "link": "Registra't"
+    },
+    "submit": {
+      "title": "Inicia la sessió"
+    },
+    "errors": {
+      "invalidCredentials": "Correu electrònic o contrasenya incorrectes",
+      "default": "Error desconegut. Torneu-ho a provar més tard"
+    },
+    "resetPassword": "S'ha restablert la contrasenya correctament. Ara podeu iniciar sessió"
+  },
+  "ForgotPasswordPage": {
+    "title": "Heu oblidat la contrasenya?",
+    "message": "Introduïu el vostre correu electrònic i us enviarem un enllaç per restablir la contrasenya",
+    "submit": {
+      "title": "Enviar correu electrònic"
+    },
+    "errors": {
+      "required": "Aquest camp és obligatori",
+      "invalid": "Format de correu no vàlid",
+      "default": "Error desconegut. Torneu-ho a provar més tard"
+    },
+    "success": {
+      "message": "S'ha enviat un correu electrònic per restablir la contrasenya"
+    },
+    "email": {
+      "label": "Correu electrònic",
+      "placeholder": "test@test.cat"
+    }
+  },
+  "ResetPasswordPage": {
+    "title": "Restablir la contrasenya",
+    "message": "Introduïu la vostra nova contrasenya",
+    "submit": {
+      "title": "Restablir la contrasenya"
+    },
+    "errors": {
+      "required": "Aquest camp és obligatori",
+      "minLength": "Ha de tenir com a mínim 8 caràcters",
+      "maxLength": "Ha de tenir com a màxim 32 caràcters",
+      "invalid": "Token invàlid",
+      "consumed": "Aquest token ja s'ha utilitzat",
+      "expired": "Aquest token ha caducat",
+      "passwordsDoNotMatch": "Les contrasenyes no coincideixen",
+      "default": "Error desconegut. Torneu-ho a provar més tard"
+    },
+    "success": {
+      "message": "La contrasenya s'ha restablert correctament"
+    },
+    "password": {
+      "label": "Contrasenya",
+      "placeholder": ""
+    },
+    "confirmPassword": {
+      "label": "Confirma la contrasenya",
+      "placeholder": ""
+    }
+  },
+  "ChangePasswordPage": {
+    "title": "Canviar la contrasenya",
+    "message": "Introduïu la vostra nova contrasenya",
+    "submit": {
+      "title": "Canviar la contrasenya"
+    },
+    "errors": {
+      "required": "Aquest camp és obligatori",
+      "minLength": "Ha de tenir com a mínim 8 caràcters",
+      "maxLength": "Ha de tenir com a màxim 32 caràcters",
+      "passwordsDoNotMatch": "Les contrasenyes no coincideixen",
+      "currentPasswordMatch": "La nova contrasenya no pot coincidir amb la contrasenya actual",
+      "invalidCurrentPassword": "La contrasenya actual no és correcta",
+      "default": "Error desconegut. Torneu-ho a provar més tard"
+    },
+    "success": {
+      "message": "La contrasenya s'ha canviat correctament"
+    },
+    "currentPassword": {
+      "label": "Contrasenya actual",
+      "placeholder": ""
+    },
+    "password": {
+      "label": "Contrasenya",
+      "placeholder": ""
+    },
+    "confirmPassword": {
+      "label": "Confirma la contrasenya",
+      "placeholder": ""
+    }
+  },
+  "RegisterPage": {
+    "title": "Registra't",
+    "message": "Crea un compte nou",
+    "submit": {
+      "title": "Registrar-se"
+    },
+    "errors": {
+      "required": "Aquest camp és obligatori",
+      "minLength": "Ha de tenir com a mínim 8 caràcters",
+      "maxLength": "Ha de tenir com a màxim 32 caràcters",
+      "invalidEmail": "Format de correu no vàlid",
+      "emailAlreadyExists": "El correu electrònic ja està registrat",
+      "uuid": "El UUID no és vàlid",
+      "default": "Error desconegut. Torneu-ho a provar més tard"
+    },
+    "success": {
+      "message": "S'ha creat el compte correctament"
+    },
+    "companyName": {
+      "label": "Nom de l'empresa",
+      "placeholder": ""
+    },
+    "firstName": {
+      "label": "Nom",
+      "placeholder": ""
+    },
+    "lastName": {
+      "label": "Cognoms",
+      "placeholder": ""
+    },
+    "email": {
+      "label": "Correu electrònic",
+      "placeholder": ""
+    },
+    "password": {
+      "label": "Contrasenya",
+      "placeholder": ""
+    },
+    "languageId": {
+      "label": "Idioma",
+      "placeholder": ""
+    },
+    "login": {
+      "message": "Ja teniu un compte?",
+      "link": "Inicieu la sessió"
+    }
+  },
+  "Layout": {
+    "title": "Tauler de control",
+    "signedInAs": "Connectat com",
+    "changePassword": "Canviar la contrasenya",
+    "logout": "Tancar sessió",
+    "employee": {
+      "title": "Empleat",
+      "attendances": "Fitxatges",
+      "leaves": "Absències",
+      "profile": "Perfil",
+      "salaries": "Nòmines"
+    },
+    "admin": {
+      "title": "Administrador",
+      "calendars": "Calendaris",
+      "companies": "Empreses",
+      "departments": "Departaments",
+      "holidays": "Festius",
+      "teams": "Equips",
+      "timeoffPolicies": "Polítiques de vacances",
+      "users": "Usuaris",
+      "workCenters": "Centres de treball"
+    },
+    "manager": {
+      "title": "Responsable",
+      "attendanceRequests": "Sol·licituds de fitxatge",
+      "leaveRequests": "Sol·licituds d’absència",
+      "attendances": "Fitxatges"
+    },
+    "hr": {
+      "title": "Gestió del talent",
+      "calendars": "Calendaris",
+      "departments": "Departaments",
+      "holidays": "Festius",
+      "teams": "Equips",
+      "attendanceRequests": "Sol·licituds de fitxatge",
+      "attendances": "Fitxatges"
+    }
+  },
+  "Profile": {
+    "title": "Perfil",
+    "firstName": {
+      "label": "Nom",
+      "placeholder": ""
+    },
+    "lastName": {
+      "label": "Cognoms",
+      "placeholder": ""
+    },
+    "email": {
+      "label": "Correu electrònic",
+      "placeholder": ""
+    },
+    "phone": {
+      "label": "Telèfon",
+      "placeholder": ""
+    },
+    "birthDate": {
+      "label": "Data de naixement",
+      "placeholder": ""
+    },
+    "languageId": {
+      "label": "Idioma",
+      "placeholder": ""
+    },
+    "genderId": {
+      "label": "Gènere",
+      "placeholder": ""
+    },
+    "submit": "Actualitzar",
+    "errors": {
+      "required": "Aquest camp és obligatori",
+      "minLength": "Ha de tenir com a mínim 8 caràcters",
+      "maxLength": "Ha de tenir com a màxim 32 caràcters",
+      "age": "Ha de tenir almenys 16 anys",
+      "default": "Error desconegut. Torneu-ho a provar més tard"
+    },
+    "success": "El perfil s'ha actualitzat correctament"
+  },
+  "Table": {
+    "noData": "No hi ha dades disponibles"
+  },
+  "Tables": {
+    "users": {
+      "title": "Usuaris",
+      "add": "Afegir",
+      "id": "ID",
+      "firstName": "Nom",
+      "lastName": "Cognoms",
+      "email": "Correu electrònic",
+      "phone": "Telèfon",
+      "birthDate": "Data de naixement",
+      "actions": "Accions"
+    },
+    "workCenters": {
+      "title": "Centres de treball",
+      "add": "Afegir",
+      "id": "ID",
+      "name": "Nom",
+      "actions": "Accions"
+    },
+    "departments": {
+      "title": "Departaments",
+      "add": "Afegir",
+      "id": "ID",
+      "name": "Nom",
+      "workCenter": "Centre de traball",
+      "actions": "Accions"
+    }
+  },
+  "Crud": {
+    "AddWorkCenter": {
+      "title": "Afegir centre de treball",
+      "name": {
+        "label": "Nom",
+        "placeholder": ""
+      },
+      "submit": "Afegir",
+      "errors": {
+        "required": "Aquest camp és obligatori",
+        "default": "Error desconegut. Torneu-ho a provar més tard"
+      }
+    },
+    "EditWorkCenter": {
+      "title": "Editar centre de treball",
+      "name": {
+        "label": "Nom",
+        "placeholder": ""
+      },
+      "submit": "Editar",
+      "errors": {
+        "required": "Aquest camp és obligatori",
+        "default": "Error desconegut. Torneu-ho a provar més tard"
+      }
+    },
+    "ViewWorkCenter": {
+      "title": "Centre de treball",
+      "id": "ID",
+      "name": "Nom"
+    },
+    "AddDepartment": {
+      "title": "Afegir departament",
+      "name": {
+        "label": "Nom",
+        "placeholder": ""
+      },
+      "workCenterId": {
+        "label": "Centre de treball",
+        "placeholder": ""
+      },
+      "submit": "Afegir",
+      "errors": {
+        "required": "Aquest camp és obligatori",
+        "uuid": "El UUID no és vàlid",
+        "default": "Error desconegut. Torneu-ho a provar més tard"
+      }
+    },
+    "ViewDepartment": {
+      "title": "Departament",
+      "id": "ID",
+      "name": "Nom",
+      "workCenter": "Centre de traball"
+    },
+    "EditDepartment": {
+      "title": "Editar departament",
+      "name": {
+        "label": "Nom",
+        "placeholder": ""
+      },
+      "workCenterId": {
+        "label": "Centre de treball",
+        "placeholder": ""
+      },
+      "submit": "Editar",
+      "errors": {
+        "required": "Aquest camp és obligatori",
+        "default": "Error desconegut. Torneu-ho a provar més tard"
+      }
+    }
+  },
+  "EditUser": {
+    "title": "Editar usuari",
+    "firstName": {
+      "label": "Nom",
+      "placeholder": ""
+    },
+    "lastName": {
+      "label": "Cognoms",
+      "placeholder": ""
+    },
+    "email": {
+      "label": "Correu electrònic",
+      "placeholder": ""
+    },
+    "phone": {
+      "label": "Telèfon",
+      "placeholder": ""
+    },
+    "birthDate": {
+      "label": "Data de naixement",
+      "placeholder": ""
+    },
+    "languageId": {
+      "label": "Idioma",
+      "placeholder": ""
+    },
+    "genderId": {
+      "label": "Gènere",
+      "placeholder": ""
+    },
+    "roleIds": {
+      "label": "Rols",
+      "placeholder": ""
+    },
+    "submit": "Actualitzar",
+    "errors": {
+      "required": "Aquest camp és obligatori",
+      "minLength": "Ha de tenir com a mínim 8 caràcters",
+      "maxLength": "Ha de tenir com a màxim 32 caràcters",
+      "age": "Ha de tenir almenys 16 anys",
+      "default": "Error desconegut. Torneu-ho a provar més tard"
+    },
+    "success": "El perfil s'ha actualitzat correctament"
+  },
+  "AddUser": {
+    "title": "Afegir usuari",
+    "firstName": {
+      "label": "Nom",
+      "placeholder": ""
+    },
+    "lastName": {
+      "label": "Cognoms",
+      "placeholder": ""
+    },
+    "email": {
+      "label": "Correu electrònic",
+      "placeholder": ""
+    },
+    "phone": {
+      "label": "Telèfon",
+      "placeholder": ""
+    },
+    "birthDate": {
+      "label": "Data de naixement",
+      "placeholder": ""
+    },
+    "languageId": {
+      "label": "Idioma",
+      "placeholder": ""
+    },
+    "password": {
+      "label": "Contrasenya",
+      "placeholder": ""
+    },
+    "genderId": {
+      "label": "Gènere",
+      "placeholder": ""
+    },
+    "roleIds": {
+      "label": "Rols",
+      "placeholder": ""
+    },
+    "submit": "Afegir",
+    "errors": {
+      "required": "Aquest camp és obligatori",
+      "minLength": "Ha de tenir com a mínim 8 caràcters",
+      "maxLength": "Ha de tenir com a màxim 32 caràcters",
+      "age": "Ha de tenir almenys 16 anys",
+      "default": "Error desconegut. Torneu-ho a provar més tard"
+    }
+  },
+  "ViewUser": {
+    "title": "Veure usuari",
+    "firstName": {
+      "label": "Nom",
+      "placeholder": ""
+    },
+    "lastName": {
+      "label": "Cognoms",
+      "placeholder": ""
+    },
+    "email": {
+      "label": "Correu electrònic",
+      "placeholder": ""
+    },
+    "phone": {
+      "label": "Telèfon",
+      "placeholder": ""
+    },
+    "birthDate": {
+      "label": "Data de naixement",
+      "placeholder": ""
+    },
+    "language": {
+      "label": "Idioma",
+      "placeholder": ""
+    },
+    "gender": {
+      "label": "Gènere",
+      "placeholder": ""
+    },
+    "roles": {
+      "label": "Rols",
+      "placeholder": ""
+    }
+  },
+  "Attendances": {
+    "weekTitle": "Fitxatges setmana {week}",
+    "dayTitle": "Fitxatges",
+    "ariaTotalWorkedTime": "Temps total treballat",
+    "ariaPreviousWeek": "Anar a la setmana anterior",
+    "ariaNextWeek": "Anar a la setmana següent",
+    "noAttendances": "No hi ha fitxatges",
+    "startTime": "Hora inici",
+    "endTime": "Hora fi",
+    "time": "Temps",
+    "add": "Sol·licitar fitxatge",
+    "user": "Usuari",
+    "ongoing": "En curs",
+    "ariaPreviousDay": "Anar al dia anterior",
+    "ariaNextDay": "Anar al dia següent"
+  },
+  "AddManualAttendanceRequest": {
+    "title": "Sol·licitar fitxatge manual",
+    "checkIn": {
+      "label": "Hora d’entrada"
+    },
+    "checkOut": {
+      "label": "Hora de sortida"
+    },
+    "errors": {
+      "default": "S'ha produït un error en enviar la sol·licitud.",
+      "required": "Aquest camp és obligatori.",
+      "invalidDates": "L’hora de sortida ha de ser posterior a l’hora d’entrada."
+    },
+    "submit": "Enviar",
+    "success": "S'ha enviat la sol·licitud"
+  },
+  "ManualAttendanceRequests": {
+    "title": "Sol·licituds de fitxatge",
+    "user": "Usuari",
+    "startDate": "Data d'inici",
+    "endDate": "Data de fi",
+    "actions": "Opcions",
+    "accept": "Acceptar",
+    "reject": "Rebutjar",
+    "success": "La sol·licitud s'ha processat correctament",
+    "error": "S'ha produït un error en processar la sol·licitud",
+    "empty": "No hi ha sol·licituds pendents"
+  }
+}
