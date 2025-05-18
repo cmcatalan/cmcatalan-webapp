@@ -5,6 +5,8 @@ import {addManualAttendanceRequestSchema} from "@/lib/zod";
 import {domainApi} from "@/types";
 import {getTranslations} from "next-intl/server";
 import {redirect} from "next/navigation";
+import {TZDate} from "@date-fns/tz";
+import {defaultTimeZone} from "@/utils/datetime";
 
 interface Errors {
     general?: string;
@@ -64,8 +66,8 @@ export async function addManualAttendanceRequest(prevSate: AddManualAttendanceRe
         const {error} = await domainApi.POST("/ManualAttendanceRequests", {
             body: {
                 userId: session.user.id,
-                checkIn: new Date(values.checkIn).toISOString(),
-                checkOut: new Date(values.checkOut).toISOString(),
+                checkIn: new TZDate(values.checkIn, defaultTimeZone).toISOString(),
+                checkOut: new TZDate(values.checkOut, defaultTimeZone).toISOString(),
                 statusId: process.env.PENDING_MANUALATTENDANCESTATUSID
             },
         });
