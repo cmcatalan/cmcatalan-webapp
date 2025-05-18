@@ -66,8 +66,8 @@ export async function addManualAttendanceRequest(prevSate: AddManualAttendanceRe
         const {error} = await domainApi.POST("/ManualAttendanceRequests", {
             body: {
                 userId: session.user.id,
-                checkIn: new TZDate(values.checkIn, defaultTimeZone).toISOString(),
-                checkOut: new TZDate(values.checkOut, defaultTimeZone).toISOString(),
+                checkIn: new TZDate(values.checkIn, defaultTimeZone).toUTCString(),
+                checkOut: new TZDate(values.checkOut, defaultTimeZone).toUTCString(),
                 statusId: process.env.PENDING_MANUALATTENDANCESTATUSID
             },
         });

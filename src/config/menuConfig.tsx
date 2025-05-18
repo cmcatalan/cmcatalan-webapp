@@ -19,8 +19,8 @@ export const roleMenus: Record<Role, MenuSection> = {
     Employee: {
         titleKey: "employee.title",
         items: [
-            {key: "profile", labelKey: "employee.profile", href: "/employee/profile", icon: <FaCircleUser/>},
-            {key: "attendances", labelKey: "employee.attendances", href: "/employee/attendances", icon: <FaClock/>},
+            {key: "employeeprofile", labelKey: "employee.profile", href: "/employee/profile", icon: <FaCircleUser/>},
+            {key: "employeeattendances", labelKey: "employee.attendances", href: "/employee/attendances", icon: <FaClock/>},
             // {key: "leaves", labelKey: "employee.leaves", href: "/employee/leaves", icon: <FaPlaneDeparture/>},
             // {key: "salaries", labelKey: "employee.salaries", href: "/employee/salaries", icon: <FaFolderOpen/>},
         ],
@@ -28,15 +28,15 @@ export const roleMenus: Record<Role, MenuSection> = {
     Admin: {
         titleKey: "admin.title",
         items: [
-            {key: "users", labelKey: "admin.users", href: "/admin/users", icon: <FaUsers/>},
+            {key: "adminusers", labelKey: "admin.users", href: "/admin/users", icon: <FaUsers/>},
             // { key: "companies", labelKey: "admin.companies", href: "/admin/companies", icon: <FaRegBuilding /> },
             {
-                key: "workCenters",
+                key: "adminworkCenters",
                 labelKey: "admin.workCenters",
                 href: "/admin/work-centers",
                 icon: <FaBriefcase/>
             },
-            {key: "departments", labelKey: "admin.departments", href: "/admin/departments", icon: <FaPuzzlePiece/>},
+            {key: "admindepartments", labelKey: "admin.departments", href: "/admin/departments", icon: <FaPuzzlePiece/>},
             // { key: "teams", labelKey: "admin.teams", href: "/admin/teams", icon: <FaUsers /> },
             // {key: "calendars", labelKey: "admin.calendars", href: "/admin/calendars", icon: <FaCalendar/>},
             // // { key: "holidays", labelKey: "admin.holidays", href: "/admin/holidays", icon: <MdHolidayVillage /> },
@@ -69,12 +69,12 @@ export const roleMenus: Record<Role, MenuSection> = {
         titleKey: "hr.title",
         items: [
             {
-                key: "attendanceRequests",
+                key: "hrattendanceRequests",
                 labelKey: "hr.attendanceRequests",
                 href: "/hr/attendance-requests",
                 icon: <FaRegClock/>,
             },
-            {key: "attendances", labelKey: "hr.attendances", href: "/hr/attendances", icon: <FaClock/>},
+            {key: "hrattendances", labelKey: "hr.attendances", href: "/hr/attendances", icon: <FaClock/>},
 
             // {key: "calendars", labelKey: "hr.calendars", href: "/hr/calendars", icon: <FaCalendar/>},
             // { key: "departments", labelKey: "hr.departments", href: "/hr/departments", icon: <FaMapMarkedAlt /> },
