@@ -23,7 +23,7 @@ export default async function DepartmentsPage() {
     const workCentersIds: string[] =
         (workCentersData ?? ([] as WorkCenter[])).filter((x) => x.id !== undefined).map((x) => x.id as string) ?? [];
 
-    const {data} = await domainApi.GET("/Departments", {
+    const {data: departmentsData} = await domainApi.GET("/Departments", {
         params: {
             query: {
                 WorkCenterIds: workCentersIds.join(","),
@@ -31,7 +31,9 @@ export default async function DepartmentsPage() {
         },
     });
 
-    const items = (data ?? ([] as Department[]))
+    const departments = (workCentersIds.length > 0 && departmentsData ? departmentsData : []) as Department[];
+
+    const items = (departments ?? ([] as Department[]))
         .filter((x) => !x.deletedAt)
         .map((department) => ({
             name: department.name,

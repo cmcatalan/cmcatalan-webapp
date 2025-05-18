@@ -31,19 +31,19 @@ export default async function ViewDepartment({ params }: ViewDepartmentPageProps
 
   return (
     <div className="max-w-md mx-auto mt-10 p-6 border-1 border-gray-200 rounded-2xl space-y-6">
-      <h1 className="text-2xl font-bold text-center text-gray-800">{t("title")}</h1>
+      <h1 className="text-2xl font-bold text-center">{t("title")}</h1>
       <div className="space-y-4">
         <div>
-          <p className="text-sm font-medium text-gray-500">{t("id")}</p>
-          <p className="text-base font-semibold text-gray-800">{data.id}</p>
+          <p className="text-sm font-medium">{t("id")}</p>
+          <p className="text-base font-semibold">{data.id}</p>
         </div>
         <div>
-          <p className="text-sm font-medium text-gray-500">{t("name")}</p>
-          <p className="text-base font-semibold text-gray-800">{data.name}</p>
+          <p className="text-sm font-medium">{t("name")}</p>
+          <p className="text-base font-semibold">{data.name}</p>
         </div>
         <div>
-          <p className="text-sm font-medium text-gray-500">{t("workCenter")}</p>
-          <p className="text-base font-semibold text-gray-800">{workCenterData?.name}</p>
+          <p className="text-sm font-medium">{t("workCenter")}</p>
+          <p className="text-base font-semibold">{workCenterData?.name}</p>
         </div>
       </div>
     </div>
