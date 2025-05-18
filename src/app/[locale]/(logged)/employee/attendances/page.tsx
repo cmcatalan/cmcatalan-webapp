@@ -64,7 +64,7 @@ export default async function AttendancesPage({searchParams}: AttendancesPagePro
     return (
         <div className="md:max-w-screen-md md:mx-auto">
             <Button className="mb-2" aria-label={t("ariaPreviousWeek")} color="primary" startContent={<FaPlus/>}
-                    as={Link} href="/employee/attendances/add">
+                    as={Link} href={`/${localeStr}/employee/attendances/add`}>
                 {t("add")}
             </Button>
             <div className="flex flex-col xs:flex-row items-center justify-between mb-4">

@@ -19,15 +19,15 @@ import {
     NavbarMenuToggle,
 } from "@heroui/react";
 import {Role, roleMenus} from "@/config/menuConfig";
-import {useTranslations} from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
 import {User} from "next-auth";
 import {ReactNode} from "react";
 import {FaCircleNodes} from "react-icons/fa6";
 import DarkModeSwitcher from "@/components/DarkModeSwitcher";
 import AttendanceButton from "@/app/[locale]/(logged)/components/AttedanceButton";
 import {Attendance} from "@/interfaces/Domain";
-import Link from "next/link";
 import {useRouter} from "next/navigation";
+import Link from "next/link";
 
 interface ClientLayoutProps {
     children: ReactNode;
@@ -39,6 +39,7 @@ export default function ClientLayout({children, user, openAttendance}: ClientLay
     const t = useTranslations("Layout");
     const pathname = usePathname();
     const router = useRouter();
+    const locale = useLocale();
     const menuSections = (user.roles as Role[]).filter((role) => roleMenus[role]).map((role) => roleMenus[role]);
     const appName = "FemEquip";
 
@@ -49,8 +50,8 @@ export default function ClientLayout({children, user, openAttendance}: ClientLay
                     <ListboxSection key={section.titleKey} title={t(section.titleKey)} showDivider>
                         {section.items.map((item) => (
                             <ListboxItem
+                                href={`/${locale}${item.href}`}
                                 key={item.key}
-                                href={item.href}
                                 as={Link}
                                 startContent={item.icon}
                                 aria-current={pathname === item.href ? "page" : undefined}
@@ -112,13 +113,13 @@ export default function ClientLayout({children, user, openAttendance}: ClientLay
                                     <p className="font-semibold">{t("signedInAs")}</p>
                                     <p className="font-semibold">{user.email}</p>
                                 </DropdownItem>
-                                <DropdownItem key="help_and_feedback" href="/change-password" as={Link}>
+                                <DropdownItem key="change_password" href={`/${locale}/change-password`} as={Link}>
                                     {t("changePassword")}
                                 </DropdownItem>
                                 <DropdownItem key="logout" color="danger" className="text-danger bg-danger-100"
                                               onPress={async () => {
                                                   await signOut({redirect: false})
-                                                  router.push('/login')
+                                                  router.push(`/${locale}/login`)
                                               }
                                               }>
                                     {t("logout")}

@@ -6,7 +6,7 @@ import ClientTable from "../../components/ClientTable";
 import {Button} from "@heroui/react";
 import Link from "next/link";
 import {FaEye, FaPencil, FaPlus, FaTrash} from "react-icons/fa6";
-import {getTranslations} from "next-intl/server";
+import {getLocale, getTranslations} from "next-intl/server";
 
 export default async function WorkCentersPage() {
     const session = await auth();
@@ -20,6 +20,8 @@ export default async function WorkCentersPage() {
         },
     });
 
+    const locale = await getLocale();
+
     const items = (data ?? ([] as WorkCenter[]))
         .filter((x) => !x.deletedAt)
         .map((workCenter) => ({
@@ -27,15 +29,15 @@ export default async function WorkCentersPage() {
             actions: (
                 <div className="space-x-1 flex flex-row justify-center">
                     <Button color="primary" size="sm" isIconOnly aria-label="view" as={Link}
-                            href={`/admin/work-centers/${workCenter.id}`}>
+                            href={`/${locale}/admin/work-centers/${workCenter.id}`}>
                         <FaEye/>
                     </Button>
                     <Button color="warning" size="sm" isIconOnly aria-label="edit" as={Link}
-                            href={`/admin/work-centers/edit/${workCenter.id}`}>
+                            href={`/${locale}/admin/work-centers/edit/${workCenter.id}`}>
                         <FaPencil/>
                     </Button>
                     <Button color="danger" size="sm" isIconOnly aria-label="delete"
-                            href={`/admin/work-centers/delete/${workCenter.id}`}>
+                            href={`/${locale}/admin/work-centers/delete/${workCenter.id}`}>
                         <FaTrash/>
                     </Button>
                 </div>
@@ -50,7 +52,7 @@ export default async function WorkCentersPage() {
                 <h1 className="font-semibold text-lg text-center">{t("title")} </h1>
             </div>
             <div className="flex flex-row justify-center">
-                <Button color="primary" startContent={<FaPlus/>} size="md" href="/admin/work-centers/add" as={Link}>
+                <Button color="primary" startContent={<FaPlus/>} size="md" href={`/${locale}/admin/work-centers/add`} as={Link}>
                     {t("add")}
                 </Button>
             </div>

@@ -5,7 +5,7 @@ import ClientTable from "../../components/ClientTable";
 import Link from "next/link";
 import {Button} from "@heroui/react";
 import {FaEye, FaPencil, FaPlus, FaTrash} from "react-icons/fa6";
-import {getTranslations} from "next-intl/server";
+import {getLocale, getTranslations} from "next-intl/server";
 
 export default async function UsersPage() {
     const session = await auth();
@@ -19,6 +19,8 @@ export default async function UsersPage() {
         },
     });
 
+    const locale = await getLocale();
+
     const users =
         data?.items
             ?.filter((x) => !x.deletedAt)
@@ -30,15 +32,15 @@ export default async function UsersPage() {
                 actions: (
                     <div className="space-x-1 flex flex-row justify-center">
                         <Button color="primary" size="sm" isIconOnly aria-label="view" as={Link}
-                                href={`/admin/users/${user.id}`}>
+                                href={`/${locale}/admin/users/${user.id}`}>
                             <FaEye/>
                         </Button>
                         <Button color="warning" size="sm" isIconOnly aria-label="edit"
-                                href={`/admin/users/edit/${user.id}`} as={Link}>
+                                href={`/${locale}/admin/users/edit/${user.id}`} as={Link}>
                             <FaPencil/>
                         </Button>
                         <Button color="danger" size="sm" isIconOnly aria-label="delete"
-                                href={`/admin/users/delete/${user.id}`} as={Link}>
+                                href={`/${locale}/admin/users/delete/${user.id}`} as={Link}>
                             <FaTrash/>
                         </Button>
                     </div>
@@ -53,7 +55,7 @@ export default async function UsersPage() {
                 <h1 className="font-semibold text-lg text-center">{t("title")} </h1>
             </div>
             <div className="flex flex-row justify-center">
-                <Button color="primary" startContent={<FaPlus/>} size="md" href="/admin/users/add" as={Link}>
+                <Button color="primary" startContent={<FaPlus/>} size="md" href={`/${locale}/admin/users/add`} as={Link}>
                     {t("add")}
                 </Button>
             </div>

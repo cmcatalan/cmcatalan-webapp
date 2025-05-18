@@ -6,7 +6,7 @@ import ClientTable from "../../components/ClientTable";
 import {Button} from "@heroui/react";
 import Link from "next/link";
 import {FaEye, FaPencil, FaPlus, FaTrash} from "react-icons/fa6";
-import {getTranslations} from "next-intl/server";
+import {getLocale, getTranslations} from "next-intl/server";
 
 export default async function DepartmentsPage() {
     const session = await auth();
@@ -32,6 +32,7 @@ export default async function DepartmentsPage() {
     });
 
     const departments = (workCentersIds.length > 0 && departmentsData ? departmentsData : []) as Department[];
+    const locale = await getLocale();
 
     const items = (departments ?? ([] as Department[]))
         .filter((x) => !x.deletedAt)
@@ -41,15 +42,15 @@ export default async function DepartmentsPage() {
             actions: (
                 <div className="space-x-1 flex flex-row justify-center">
                     <Button color="primary" size="sm" isIconOnly aria-label="view" as={Link}
-                            href={`/admin/departments/${department.id}`}>
+                            href={`/${locale}/admin/departments/${department.id}`}>
                         <FaEye/>
                     </Button>
                     <Button color="warning" size="sm" isIconOnly aria-label="edit"
-                            href={`/admin/departments/edit/${department.id}`} as={Link}>
+                            href={`/${locale}/admin/departments/edit/${department.id}`} as={Link}>
                         <FaPencil/>
                     </Button>
                     <Button color="danger" size="sm" isIconOnly aria-label="delete" as={Link}
-                            href={`/admin/departments/delete/${department.id}`}>
+                            href={`/${locale}/admin/departments/delete/${department.id}`}>
                         <FaTrash/>
                     </Button>
                 </div>
@@ -64,7 +65,7 @@ export default async function DepartmentsPage() {
                 <h1 className="font-semibold text-lg text-center">{t("title")} </h1>
             </div>
             <div className="flex flex-row justify-center">
-                <Button color="primary" startContent={<FaPlus/>} size="md" as={Link} href="/admin/departments/add">
+                <Button color="primary" startContent={<FaPlus/>} size="md" as={Link} href={`/${locale}/admin/departments/add`}>
                     {t("add")}
                 </Button>
             </div>
