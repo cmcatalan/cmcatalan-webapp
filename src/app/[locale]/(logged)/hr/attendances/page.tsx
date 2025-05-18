@@ -41,11 +41,11 @@ export default async function AttendancesPage({searchParams}: AttendancesPagePro
 
     const parsedStart = haveDate ? parsedDate : toZonedTime(parsedDate, defaultTimeZone);
     parsedStart.setHours(0, 0, 0, 0);
-    const start = parsedStart.toUTCString();
+    const start = parsedStart.toISOString();
 
     const parsedEnd = haveDate ? parsedDate : toZonedTime(parsedDate, defaultTimeZone);
     parsedEnd.setHours(23, 59, 59, 999);
-    const end = parsedStart.toUTCString();
+    const end = parsedStart.toISOString();
 
     const attendances = await getAttendances(session?.user.company, start, end);
     const localeStr = await getLocale();

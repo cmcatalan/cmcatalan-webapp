@@ -7,6 +7,7 @@ import {getTranslations} from "next-intl/server";
 import {redirect} from "next/navigation";
 import {TZDate} from "@date-fns/tz";
 import {defaultTimeZone} from "@/utils/datetime";
+import {fromZonedTime} from "date-fns-tz";
 
 interface Errors {
     general?: string;
@@ -66,8 +67,8 @@ export async function addManualAttendanceRequest(prevSate: AddManualAttendanceRe
         const {error} = await domainApi.POST("/ManualAttendanceRequests", {
             body: {
                 userId: session.user.id,
-                checkIn: new TZDate(values.checkIn, defaultTimeZone).toUTCString(),
-                checkOut: new TZDate(values.checkOut, defaultTimeZone).toUTCString(),
+                checkIn: fromZonedTime(new TZDate(values.checkIn, defaultTimeZone), defaultTimeZone).toISOString(),
+                checkOut: fromZonedTime(new TZDate(values.checkOut, defaultTimeZone), defaultTimeZone).toISOString(),
                 statusId: process.env.PENDING_MANUALATTENDANCESTATUSID
             },
         });

@@ -37,7 +37,7 @@ export default async function AttendancesPage({searchParams}: AttendancesPagePro
     sundayInZone.setDate(mondayInZone.getDate() + 6);
     sundayInZone.setHours(23, 59, 59, 999);
 
-    const attendances = await getUserAttendances(session.user.id, mondayInZone.toUTCString(), sundayInZone.toUTCString());
+    const attendances = await getUserAttendances(session.user.id, mondayInZone.toISOString(), sundayInZone.toISOString());
     const localeStr = await getLocale();
     const localeMap: Record<string, Locale> = {
         es,
