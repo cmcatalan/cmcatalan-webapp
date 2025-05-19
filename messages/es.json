@@ -434,6 +434,7 @@
       "minLength": "Debe tener al menos 8 caracteres",
       "maxLength": "Debe tener como máximo 32 caracteres",
       "age": "Debe tener al menos 16 años",
+      "invalid": "Inválido",
       "default": "Error desconocido. Por favor, inténtelo de nuevo más tarde"
     }
   },

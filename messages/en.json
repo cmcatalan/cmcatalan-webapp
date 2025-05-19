@@ -434,6 +434,7 @@
       "minLength": "Must be at least 8 characters",
       "maxLength": "Must be at most 32 characters",
       "age": "Must be at least 16 years old",
+      "invalid": "Invalid",
       "default": "Unknown error. Please try again later"
     }
   },

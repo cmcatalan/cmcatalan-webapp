@@ -435,6 +435,7 @@
       "minLength": "Ha de tenir com a mínim 8 caràcters",
       "maxLength": "Ha de tenir com a màxim 32 caràcters",
       "age": "Ha de tenir almenys 16 anys",
+      "invalid": "Invàlid",
       "default": "Error desconegut. Torneu-ho a provar més tard"
     }
   },
