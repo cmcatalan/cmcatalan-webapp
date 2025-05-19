@@ -432,6 +432,7 @@
     "submit": "Afegir",
     "errors": {
       "required": "Aquest camp és obligatori",
+      "uuid": "Aquest camp és obligatori",
       "minLength": "Ha de tenir com a mínim 8 caràcters",
       "maxLength": "Ha de tenir com a màxim 32 caràcters",
       "age": "Ha de tenir almenys 16 anys",

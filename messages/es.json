@@ -431,6 +431,7 @@
     "submit": "Añadir",
     "errors": {
       "required": "Este campo es obligatorio",
+      "uuid": "Este campo es obligatorio",
       "minLength": "Debe tener al menos 8 caracteres",
       "maxLength": "Debe tener como máximo 32 caracteres",
       "age": "Debe tener al menos 16 años",
