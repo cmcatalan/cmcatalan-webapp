@@ -36,7 +36,7 @@ export default async function WorkCentersPage() {
                             href={`/${locale}/admin/work-centers/edit/${workCenter.id}`}>
                         <FaPencil/>
                     </Button>
-                    <Button color="danger" size="sm" isIconOnly aria-label="delete"
+                    <Button color="danger" size="sm" isIconOnly aria-label="delete" as={Link}
                             href={`/${locale}/admin/work-centers/delete/${workCenter.id}`}>
                         <FaTrash/>
                     </Button>
