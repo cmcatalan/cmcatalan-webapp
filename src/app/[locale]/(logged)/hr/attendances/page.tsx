@@ -29,6 +29,11 @@ export default async function AttendancesPage({searchParams}: AttendancesPagePro
     let parsedDate = new Date();
 
     const haveDate = date && !isNaN(new Date(date).getTime());
+    if (!haveDate) {
+        const now = new TZDate(new Date(), defaultTimeZone);
+        const d = encodeURI(format(now, "yyyy-MM-dd"));
+        redirect(`/hr/attendances?date=${d}`);
+    }
 
     if (haveDate) {
         const splits = date.split("-");
